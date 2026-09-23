@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #f4f4f4; /* Light background for high contrast with dark text */
+  color: #222222;            /* Dark text for strong readability and contrast compliance */
   margin: 0;
   padding: 0;
 }
@@ -12,6 +13,25 @@ h4,
 h5,
 h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  color: #111111;
+}
+
+/* Skip Link Styling (Hidden by default, visible on keyboard focus) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: #ffffff;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: bold;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .container {
@@ -22,6 +42,7 @@ h6 {
 
 img {
   width: 100%;
+  height: auto;
 }
 
 .main-nav ul {
@@ -30,6 +51,7 @@ img {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  background-color: #e2e2e2;
 }
 
 .main-nav ul li {
@@ -39,9 +61,22 @@ img {
 
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  color: #0056b3; /* High-contrast accessible link color */
   text-decoration: none;
   font-size: 1.25rem;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  background-color: #d0d0d0;
+  text-decoration: underline;
+}
+
+/* Owner section links */
+.owner a {
+  color: #0056b3;
 }
 
 form input,
@@ -49,7 +84,17 @@ form textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  padding: .75rem 1rem;
+  border: 1px solid #555555; /* Improved border contrast */
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 1rem;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
 form textarea {
@@ -60,12 +105,23 @@ form textarea {
 }
 
 form button {
-  background: none;
-  border: 2px solid black;
-  padding: 1rem;
+  background: #111111; /* Solid dark background for strong button contrast */
+  color: #ffffff;      /* White text for maximum contrast ratio */
+  border: 2px solid #111111;
+  padding: 1rem 2rem;
   text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover,
+form button:focus {
+  background: #333333;
 }
 
 .site-footer {
   padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
 }
